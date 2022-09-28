@@ -2,3 +2,5 @@
 
 
 print('Hello World')
+
+print('Hej jak sie masz')
