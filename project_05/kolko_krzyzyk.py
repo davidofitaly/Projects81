@@ -34,4 +34,44 @@ pg.display.set_caption("Kolko i krzyzyk")
 
 PlanszaStartowa = pg.image.load('PlanszaStartowa.png')
 ObrazekX = pg.image.load('X.png')
-ObrazekY = pg.image.load('O.png')
+ObrazekO = pg.image.load('O.png')
+
+#zmiana wymiarow obrazka
+
+PlanszaStartowa = pg.transform.scale(PlanszaStartowa, (Szerokosc, Wysokosc+200))
+ObrazekX = pg.transform.scale(ObrazekX, (80,80))
+ObrazekO = pg.transform.scale(ObrazekO, (80,80))
+
+
+
+def RysujPlansze():
+    Ekran.blit(PlanszaStartowa, (0,0))
+    pg.display.update()
+    time.sleep(3)
+    Ekran.fill(Bialy)
+
+    pg.draw.line(Ekran, Czarny, (Szerokosc/3,0), (Szerokosc/3, Wysokosc),7)
+    pg.draw.line(Ekran, Czarny, (Szerokosc / 3*2, 0), (Szerokosc / 3*2, Wysokosc), 7)
+
+    pg.draw.line(Ekran, Czarny,(0, Wysokosc/3), (Szerokosc, Wysokosc/3),7)
+    pg.draw.line(Ekran, Czarny,(0, Wysokosc / 3*2), (Szerokosc, Wysokosc / 3*2), 7)
+
+
+    pg.display.update()
+
+def RysujDodatkoweInformacje():
+
+    global Remis
+
+    if KtoWygral is None:
+
+        TrescWiadomosci = 'Twoja tura' + CzyjaTura.upper()
+    else:
+        TrescWiadomosci = KtoWygral.upper() + 'wygrałeś'
+
+
+
+
+RysujPlansze()
+
+
