@@ -43,10 +43,4 @@ def compare(answer1, answer2):
         print('To nie jest prawidłowy wybór')
         sys.exit()
 
-
-
-
-
-
-
 print(compare(player_1_odpowiedz, bot))
