@@ -1,6 +1,12 @@
 import sys
 import random
 
+gramy = (input("Cześć, zagramy w papier kamień nożyce? (y/n): "))
+if gramy.lower() == "n":
+    print("I see...")
+    sys.exit(0)
+
+
 player_1 = input('Podaj imie player_1: ')
 bot_1 = ['kamien', 'papier', 'nozyczki']
 bot = random.choice(bot_1)
@@ -10,6 +16,7 @@ player_1_odpowiedz = input(f'Hej {player_1} wybierz papier, kamien lub nozyczki:
 
 
 def compare(answer1, answer2):
+
 
     if answer1 == answer2:
         return('remis :)')
@@ -32,8 +39,14 @@ def compare(answer1, answer2):
         else:
             return (f'Brawo! Bot wygrywasz wybierajac {answer2} :)')
 
-    else:
+    elif:
         print('To nie jest prawidłowy wybór')
         sys.exit()
 
-print(compare(player_1_odpowiedz,bot))
+
+
+
+
+
+
+print(compare(player_1_odpowiedz, bot))
